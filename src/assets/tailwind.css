@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+.input-style {
+  @apply border-2 border-gray-300 p-2 rounded-md focus:outline-none focus:border-blue-500;
+}
+.error-text {
+  @apply text-red-600 font-bold text-sm;
+}

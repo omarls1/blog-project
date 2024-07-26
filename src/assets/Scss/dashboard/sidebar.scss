@@ -1,0 +1,23 @@
+.dash-sidebar {
+  min-height: 100vh;
+  ul {
+    > * {
+      padding: 10px 16px;
+    }
+    li {
+      ul {
+        li {
+          &::after {
+            content: '\f0d8';
+            font-family: 'Font Awesome 6 free';
+            font-weight: 900;
+            margin-right: 7px;
+            display: inline-block;
+            vertical-align: middle;
+            transform: rotate(272deg);
+          }
+        }
+      }
+    }
+  }
+}
