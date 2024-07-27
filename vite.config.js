@@ -13,6 +13,9 @@ export default defineConfig({
   //     host: '192.168.1.1' // عنوان الـ IP الخاص بك
   //   }
   // },
+  build: {
+    outDir: 'dist'
+  },
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
