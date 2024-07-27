@@ -1,9 +1,11 @@
 import { defineStore } from 'pinia'
 import axios from 'axios'
+import { mainStore } from '@/stores/main'
+
 export const categoryStore = defineStore('categories', {
   state: () => ({
-    servCate: 'http://localhost:3000/categories',
-    newCate: 'http://localhost:3000/categories/new'
+    servCate: `${mainStore().serverLink}/categories`,
+    newCate: `${mainStore().serverLink}/categories/new`
   }),
   actions: {
     async getAllCategories() {
@@ -27,7 +29,7 @@ export const categoryStore = defineStore('categories', {
     },
     async deleteCategory(id) {
       try {
-        await axios.delete(`http://localhost:3000/categories/${id}`)
+        await axios.delete(`${mainStore().serverLink}/categories/${id}`)
       } catch (err) {
         return 'فشل الحذف' + err
       }

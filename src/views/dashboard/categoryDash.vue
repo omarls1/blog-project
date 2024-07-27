@@ -26,7 +26,7 @@ const fetchCategories = async () => {
 const handleDelete = async (event) => {
   const element = event.target.closest('.card')
   const id = element.dataset.categoryId
-
+  console.log(id)
 
   element.classList.add('animate__fadeOutRight')
 
@@ -45,8 +45,8 @@ const handleDelete = async (event) => {
       <div class="cards my-3 space-y-6">
         <div
           v-for="category in categories"
-          :key="category.CategoryId"
-          :data-category-id="category.CategoryId"
+          :key="category._id"
+          :data-category-id="category._id"
           class="shadow-lg p-6 bg-white mx-5 rounded-md transition-all duration-300 hover:shadow-xl cursor-pointer animate__animated animate__fadeInRight card"
         >
           <h3 class="text-xl font-semibold mb-2">{{ category.title }}</h3>

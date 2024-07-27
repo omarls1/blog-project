@@ -1,9 +1,10 @@
 import { defineStore } from 'pinia'
 import axios from 'axios'
+import { mainStore } from '@/stores/main'
 
 export const articleStore = defineStore('articles', {
   state: () => ({
-    articlesLink: 'http://localhost:3000/posts',
+    articlesLink: `${mainStore().serverLink}/posts`,
     allArticles: []
   }),
   actions: {
